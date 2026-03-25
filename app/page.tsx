@@ -309,6 +309,55 @@ export default function HomePage() {
                 </Button>
               </CardContent>
             </Card>
+
+            <Card className="group hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <div className="w-full h-80 rounded-lg bg-gradient-to-br from-amber-500 to-pink-500 mb-6 overflow-hidden border">
+                  <iframe
+                    src="https://v0-mathematical-board-game.vercel.app"
+                    className="w-full h-full border-0 rounded-lg scale-75 origin-top-left"
+                    style={{ width: "133%", height: "133%" }}
+                    title="Mathematical Board Game Preview"
+                  />
+                </div>
+                <CardTitle className="group-hover:text-primary transition-colors text-2xl">
+                  <Link
+                    href="https://v0-mathematical-board-game.vercel.app"
+                    target="_blank"
+                    className="flex items-center gap-2"
+                  >
+                    Math Board Game
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
+                </CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  Interactive mathematical board game designed for children. Features AI-powered bots as opponents,
+                  colorful animations, and engaging gameplay to make learning math fun and educational.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <Badge variant="secondary" className="text-sm">
+                    React
+                  </Badge>
+                  <Badge variant="secondary" className="text-sm">
+                    AI Bots
+                  </Badge>
+                  <Badge variant="secondary" className="text-sm">
+                    Kids Education
+                  </Badge>
+                  <Badge variant="secondary" className="text-sm">
+                    Animations
+                  </Badge>
+                </div>
+                <Button asChild className="w-full" size="lg">
+                  <Link href="https://v0-mathematical-board-game.vercel.app" target="_blank">
+                    Visit Live Site
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
