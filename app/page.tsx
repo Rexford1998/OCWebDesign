@@ -263,52 +263,6 @@ export default function HomePage() {
 
             <Card className="group hover:shadow-lg transition-all duration-300">
               <CardHeader>
-                <div className="w-full h-80 rounded-lg bg-gradient-to-br from-violet-500 to-purple-500 mb-6 overflow-hidden border">
-                  <iframe
-                    src="https://abtesting.me"
-                    className="w-full h-full border-0 rounded-lg scale-75 origin-top-left"
-                    style={{ width: "133%", height: "133%" }}
-                    title="ABTesting.me Preview"
-                  />
-                </div>
-                <CardTitle className="group-hover:text-primary transition-colors text-2xl">
-                  <Link href="https://abtesting.me" target="_blank" className="flex items-center gap-2">
-                    ABTesting.me
-                    <ArrowRight className="h-5 w-5" />
-                  </Link>
-                </CardTitle>
-                <CardDescription className="text-base leading-relaxed">
-                  Real-world A/B testing platform where users compare two photos with variations to get crowd feedback.
-                  Perfect for testing new designs, hairstyles, product photos, or marketing concepts with community
-                  input.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  <Badge variant="secondary" className="text-sm">
-                    A/B Testing
-                  </Badge>
-                  <Badge variant="secondary" className="text-sm">
-                    Crowd Feedback
-                  </Badge>
-                  <Badge variant="secondary" className="text-sm">
-                    Photo Comparison
-                  </Badge>
-                  <Badge variant="secondary" className="text-sm">
-                    Community
-                  </Badge>
-                </div>
-                <Button asChild className="w-full" size="lg">
-                  <Link href="https://abtesting.me" target="_blank">
-                    Visit Live Site
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-lg transition-all duration-300">
-              <CardHeader>
                 <div className="w-full h-80 rounded-lg bg-gradient-to-br from-emerald-500 to-cyan-500 mb-6 overflow-hidden border">
                   <iframe
                     src="https://v0-tensorflow-sketch-learner.vercel.app/"
