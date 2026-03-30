@@ -36,27 +36,14 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="pt-20 pb-12 px-4">
-        <div className="container mx-auto text-center max-w-4xl">
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <Sparkles className="h-6 w-6 text-primary" />
-            <Badge variant="secondary" className="text-sm">
-              Orange County Web Developer
-            </Badge>
-          </div>
-
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Rexford Ray
-          </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            Full-Stack Web Developer & iOS App Developer
-          </p>
-        </div>
-      </section>
-
       {/* Live Projects Section */}
       <section id="live-projects" className="py-20 px-4 bg-muted/30">
+        <div className="flex items-center justify-center gap-2 mb-10">
+          <Sparkles className="h-6 w-6 text-primary" />
+          <Badge variant="secondary" className="text-sm">
+            Orange County Web Developer
+          </Badge>
+        </div>
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Live Projects</h2>
