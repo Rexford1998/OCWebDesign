@@ -4,58 +4,6 @@ import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Code2, Sparkles, Zap, Globe, Mail, MapPin, Phone } from "lucide-react"
 import Link from "next/link"
 
-const demos = [
-  {
-    title: "Firebase Authentication",
-    description: "Secure user signup and login system with real-time authentication",
-    tech: ["Firebase", "React", "TypeScript"],
-    href: "/demos/firebase-auth",
-    gradient: "from-orange-500 to-red-500",
-  },
-  {
-    title: "Lead Generation System",
-    description: "Advanced form with validation, analytics, and CRM integration",
-    tech: ["React Hook Form", "Zod", "Analytics"],
-    href: "/demos/lead-generation",
-    gradient: "from-blue-500 to-cyan-500",
-  },
-  {
-    title: "Random Wheel Spinner",
-    description: "Interactive spinning wheel for contests and decision making",
-    tech: ["Canvas API", "Animations", "React"],
-    href: "/demos/wheel-spinner",
-    gradient: "from-purple-500 to-pink-500",
-  },
-  {
-    title: "Gradient Generator",
-    description: "CSS gradient creator with live preview and code export",
-    tech: ["CSS-in-JS", "Color Theory", "Export"],
-    href: "/demos/gradient-generator",
-    gradient: "from-indigo-500 to-purple-500",
-  },
-  {
-    title: "QR Code Generator",
-    description: "Dynamic QR code creation with customization options",
-    tech: ["QR.js", "Canvas", "Download"],
-    href: "/demos/qr-generator",
-    gradient: "from-teal-500 to-blue-500",
-  },
-  {
-    title: "Weather Dashboard",
-    description: "Real-time weather data with interactive maps and forecasts",
-    tech: ["Weather API", "Maps", "Charts"],
-    href: "/demos/weather-dashboard",
-    gradient: "from-sky-500 to-blue-500",
-  },
-  {
-    title: "Contact Form Validation",
-    description: "Multi-step form with real-time validation and email integration",
-    tech: ["Multi-step", "Validation", "Email API"],
-    href: "/demos/contact-form",
-    gradient: "from-amber-500 to-orange-500",
-  },
-]
-
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
@@ -68,9 +16,6 @@ export default function HomePage() {
           </div>
 
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="#demos" className="text-muted-foreground hover:text-foreground transition-colors">
-              Demos
-            </Link>
             <Link href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
               About
             </Link>
@@ -91,28 +36,14 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="pt-20 pb-12 px-4">
-        <div className="container mx-auto text-center max-w-4xl">
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <Sparkles className="h-6 w-6 text-primary" />
-            <Badge variant="secondary" className="text-sm">
-              Orange County Web Developer
-            </Badge>
-          </div>
-
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Cutting-Edge Web Development
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-            Professional HTML websites with RESTful APIs, Twilio integration, Firebase backend, webhooks, Stripe Connect
-            payments, AI ChatGPT/Anthropic integration, and SEO AMP pages. Fast delivery, innovative solutions.
-          </p>
-        </div>
-      </section>
-
       {/* Live Projects Section */}
       <section id="live-projects" className="py-20 px-4 bg-muted/30">
+        <div className="flex items-center justify-center gap-2 mb-10">
+          <Sparkles className="h-6 w-6 text-primary" />
+          <Badge variant="secondary" className="text-sm">
+            Orange County Web Developer
+          </Badge>
+        </div>
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Live Projects</h2>
@@ -364,120 +295,229 @@ export default function HomePage() {
 
       {/* Mobile App Store Section */}
       <section className="py-20 px-4 bg-card/30">
-        <div className="container mx-auto max-w-4xl">
+        <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Mobile Development</h2>
             <p className="text-xl text-muted-foreground">SwiftUI and iOS app development expertise</p>
           </div>
 
-          <Card className="group hover:shadow-lg transition-all duration-300 max-w-2xl mx-auto">
-            <CardHeader>
-              <div className="w-full h-96 rounded-lg bg-gradient-to-br from-orange-500 to-red-500 mb-6 overflow-hidden border flex items-center justify-center">
-                <img
-                  src="/app-store-screenshot.png"
-                  alt="Kash Kitchen App Store Page"
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-              <CardTitle className="group-hover:text-primary transition-colors text-2xl text-center">
-                <Link
-                  href="https://apps.apple.com/us/app/kash-kitchen/id6739987474"
-                  target="_blank"
-                  className="flex items-center justify-center gap-2"
-                >
-                  Kash Kitchen Mobile App
-                  <ArrowRight className="h-5 w-5" />
-                </Link>
-              </CardTitle>
-              <CardDescription className="text-base leading-relaxed text-center">
-                Native iOS application built with SwiftUI for the Kash Kitchen platform. Features seamless mobile
-                ordering, real-time order tracking, push notifications, and optimized user experience for food delivery
-                on mobile devices.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-2 mb-6 justify-center">
-                <Badge variant="secondary" className="text-sm">
-                  SwiftUI
-                </Badge>
-                <Badge variant="secondary" className="text-sm">
-                  iOS Development
-                </Badge>
-                <Badge variant="secondary" className="text-sm">
-                  Mobile UX/UI
-                </Badge>
-                <Badge variant="secondary" className="text-sm">
-                  Push Notifications
-                </Badge>
-                <Badge variant="secondary" className="text-sm">
-                  Real-time Updates
-                </Badge>
-              </div>
-              <div className="text-center space-y-4">
-                <p className="text-muted-foreground text-sm">
-                  Demonstrates expertise in native iOS development, SwiftUI framework, mobile app architecture, App
-                  Store deployment, and creating seamless mobile experiences that complement web platforms.
-                </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <Card className="group hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <div className="w-full h-64 rounded-lg bg-gradient-to-br from-orange-500 to-red-500 mb-6 overflow-hidden border flex items-center justify-center">
+                  <img
+                    src="/app-store-screenshot.png"
+                    alt="Kash Kitchen App Store Page"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+                <CardTitle className="group-hover:text-primary transition-colors text-2xl">
+                  <Link
+                    href="https://apps.apple.com/us/app/kash-kitchen/id6739987474"
+                    target="_blank"
+                    className="flex items-center gap-2"
+                  >
+                    Kash Kitchen
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
+                </CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  Native iOS application built with SwiftUI for the Kash Kitchen platform. Features seamless mobile
+                  ordering, real-time order tracking, push notifications, and optimized user experience for food delivery.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <Badge variant="secondary" className="text-sm">SwiftUI</Badge>
+                  <Badge variant="secondary" className="text-sm">iOS Development</Badge>
+                  <Badge variant="secondary" className="text-sm">Food Delivery</Badge>
+                </div>
                 <Button asChild className="w-full" size="lg">
                   <Link href="https://apps.apple.com/us/app/kash-kitchen/id6739987474" target="_blank">
                     View on App Store
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <div className="w-full h-64 rounded-lg bg-gradient-to-br from-blue-500 to-teal-500 mb-6 overflow-hidden border flex items-center justify-center">
+                  <Globe className="h-24 w-24 text-white" />
+                </div>
+                <CardTitle className="group-hover:text-primary transition-colors text-2xl">
+                  <Link
+                    href="https://apps.apple.com/us/app/geosnap-4-clues-1-continent/id6761042906"
+                    target="_blank"
+                    className="flex items-center gap-2"
+                  >
+                    GeoSnap: 4 Clues 1 Continent
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
+                </CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  Fun geography trivia game where players guess the continent based on 4 visual clues. Educational and entertaining mobile game built with SwiftUI for all ages.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <Badge variant="secondary" className="text-sm">SwiftUI</Badge>
+                  <Badge variant="secondary" className="text-sm">Trivia Game</Badge>
+                  <Badge variant="secondary" className="text-sm">Geography</Badge>
+                </div>
+                <Button asChild className="w-full" size="lg">
+                  <Link href="https://apps.apple.com/us/app/geosnap-4-clues-1-continent/id6761042906" target="_blank">
+                    View on App Store
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
-      {/* Demo Projects Section */}
-      <section id="demos" className="py-20 px-4">
+      {/* Reddit Games Section */}
+      <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Interactive Demo Projects</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Reddit Game Development</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Explore real-world examples showcasing modern web technologies and innovative solutions
+              Follow the development journey of our games on Reddit
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {demos.map((demo, index) => (
-              <Card
-                key={index}
-                className="group hover:shadow-lg transition-all duration-300 border-0 bg-card/50 backdrop-blur-sm"
-              >
-                <CardHeader>
-                  <div
-                    className={`w-full h-32 rounded-lg bg-gradient-to-br ${demo.gradient} mb-4 flex items-center justify-center`}
-                  >
-                    <Globe className="h-12 w-12 text-white" />
-                  </div>
-                  <CardTitle className="group-hover:text-primary transition-colors">{demo.title}</CardTitle>
-                  <CardDescription className="text-sm leading-relaxed">{demo.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {demo.tech.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="secondary" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                  <Button asChild className="w-full group-hover:bg-primary/90 transition-colors">
-                    <Link href={demo.href}>
-                      View Demo
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <Card className="group hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <div className="w-full h-48 rounded-lg bg-gradient-to-br from-orange-500 to-red-600 mb-6 flex items-center justify-center">
+                  <svg className="h-20 w-20 text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
+                  </svg>
+                </div>
+                <CardTitle className="group-hover:text-primary transition-colors text-2xl">
+                  <Link href="https://www.reddit.com/r/space_ranger_69_dev/" target="_blank" className="flex items-center gap-2">
+                    Space Ranger 69
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
+                </CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  Follow the development of Space Ranger 69, an exciting space adventure game. Join the community for updates, sneak peeks, and development discussions.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <Badge variant="secondary" className="text-sm">Game Dev</Badge>
+                  <Badge variant="secondary" className="text-sm">Space</Badge>
+                  <Badge variant="secondary" className="text-sm">Adventure</Badge>
+                </div>
+                <Button asChild className="w-full" size="lg">
+                  <Link href="https://www.reddit.com/r/space_ranger_69_dev/" target="_blank">
+                    Join Subreddit
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <div className="w-full h-48 rounded-lg bg-gradient-to-br from-green-500 to-emerald-600 mb-6 flex items-center justify-center">
+                  <svg className="h-20 w-20 text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
+                  </svg>
+                </div>
+                <CardTitle className="group-hover:text-primary transition-colors text-2xl">
+                  <Link href="https://www.reddit.com/r/swamp_master_22_dev/" target="_blank" className="flex items-center gap-2">
+                    Swamp Master 22
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
+                </CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  Dive into the development of Swamp Master 22, a unique swamp-themed game. Get behind-the-scenes content, development logs, and community feedback.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <Badge variant="secondary" className="text-sm">Game Dev</Badge>
+                  <Badge variant="secondary" className="text-sm">Swamp</Badge>
+                  <Badge variant="secondary" className="text-sm">Survival</Badge>
+                </div>
+                <Button asChild className="w-full" size="lg">
+                  <Link href="https://www.reddit.com/r/swamp_master_22_dev/" target="_blank">
+                    Join Subreddit
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <div className="w-full h-48 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 mb-6 flex items-center justify-center">
+                  <svg className="h-20 w-20 text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
+                  </svg>
+                </div>
+                <CardTitle className="group-hover:text-primary transition-colors text-2xl">
+                  <Link href="https://www.reddit.com/r/tinyeye_11_dev/" target="_blank" className="flex items-center gap-2">
+                    TinyEye 11
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
+                </CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  Explore the creation of TinyEye 11, an innovative vision-based game. Follow along for gameplay reveals, art updates, and development milestones.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <Badge variant="secondary" className="text-sm">Game Dev</Badge>
+                  <Badge variant="secondary" className="text-sm">Vision</Badge>
+                  <Badge variant="secondary" className="text-sm">Indie</Badge>
+                </div>
+                <Button asChild className="w-full" size="lg">
+                  <Link href="https://www.reddit.com/r/tinyeye_11_dev/" target="_blank">
+                    Join Subreddit
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
+        </div>
+      </section>
+
+      {/* Pricing & Services Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Cutting-Edge Web Development</h2>
+          <p className="text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
+            Professional HTML websites with RESTful APIs, Twilio integration, Firebase backend, webhooks, Stripe Connect payments, AI ChatGPT/Anthropic integration, and SEO AMP pages. Fast delivery, innovative solutions.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-10">
+            <div className="flex items-center gap-3 bg-primary/10 border border-primary/20 rounded-xl px-8 py-5">
+              <span className="text-4xl font-bold text-primary">$40</span>
+              <span className="text-lg text-muted-foreground">/hour</span>
+            </div>
+            <div className="flex items-center gap-3 bg-green-500/10 border border-green-500/20 rounded-xl px-8 py-5">
+              <Sparkles className="h-6 w-6 text-green-500" />
+              <span className="text-lg font-semibold text-green-600 dark:text-green-400">Free Quotes</span>
+            </div>
+          </div>
+
+          <Button asChild size="lg" className="text-lg px-10 py-6">
+            <Link href="#contact">
+              Get Your Free Quote
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-4">
+      <section id="about" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Sylinx Labs?</h2>
