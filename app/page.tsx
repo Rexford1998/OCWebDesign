@@ -364,69 +364,86 @@ export default function HomePage() {
 
       {/* Mobile App Store Section */}
       <section className="py-20 px-4 bg-card/30">
-        <div className="container mx-auto max-w-4xl">
+        <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Mobile Development</h2>
             <p className="text-xl text-muted-foreground">SwiftUI and iOS app development expertise</p>
           </div>
 
-          <Card className="group hover:shadow-lg transition-all duration-300 max-w-2xl mx-auto">
-            <CardHeader>
-              <div className="w-full h-96 rounded-lg bg-gradient-to-br from-orange-500 to-red-500 mb-6 overflow-hidden border flex items-center justify-center">
-                <img
-                  src="/app-store-screenshot.png"
-                  alt="Kash Kitchen App Store Page"
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-              <CardTitle className="group-hover:text-primary transition-colors text-2xl text-center">
-                <Link
-                  href="https://apps.apple.com/us/app/kash-kitchen/id6739987474"
-                  target="_blank"
-                  className="flex items-center justify-center gap-2"
-                >
-                  Kash Kitchen Mobile App
-                  <ArrowRight className="h-5 w-5" />
-                </Link>
-              </CardTitle>
-              <CardDescription className="text-base leading-relaxed text-center">
-                Native iOS application built with SwiftUI for the Kash Kitchen platform. Features seamless mobile
-                ordering, real-time order tracking, push notifications, and optimized user experience for food delivery
-                on mobile devices.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-2 mb-6 justify-center">
-                <Badge variant="secondary" className="text-sm">
-                  SwiftUI
-                </Badge>
-                <Badge variant="secondary" className="text-sm">
-                  iOS Development
-                </Badge>
-                <Badge variant="secondary" className="text-sm">
-                  Mobile UX/UI
-                </Badge>
-                <Badge variant="secondary" className="text-sm">
-                  Push Notifications
-                </Badge>
-                <Badge variant="secondary" className="text-sm">
-                  Real-time Updates
-                </Badge>
-              </div>
-              <div className="text-center space-y-4">
-                <p className="text-muted-foreground text-sm">
-                  Demonstrates expertise in native iOS development, SwiftUI framework, mobile app architecture, App
-                  Store deployment, and creating seamless mobile experiences that complement web platforms.
-                </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <Card className="group hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <div className="w-full h-64 rounded-lg bg-gradient-to-br from-orange-500 to-red-500 mb-6 overflow-hidden border flex items-center justify-center">
+                  <img
+                    src="/app-store-screenshot.png"
+                    alt="Kash Kitchen App Store Page"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+                <CardTitle className="group-hover:text-primary transition-colors text-2xl">
+                  <Link
+                    href="https://apps.apple.com/us/app/kash-kitchen/id6739987474"
+                    target="_blank"
+                    className="flex items-center gap-2"
+                  >
+                    Kash Kitchen
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
+                </CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  Native iOS application built with SwiftUI for the Kash Kitchen platform. Features seamless mobile
+                  ordering, real-time order tracking, push notifications, and optimized user experience for food delivery.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <Badge variant="secondary" className="text-sm">SwiftUI</Badge>
+                  <Badge variant="secondary" className="text-sm">iOS Development</Badge>
+                  <Badge variant="secondary" className="text-sm">Food Delivery</Badge>
+                </div>
                 <Button asChild className="w-full" size="lg">
                   <Link href="https://apps.apple.com/us/app/kash-kitchen/id6739987474" target="_blank">
                     View on App Store
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <div className="w-full h-64 rounded-lg bg-gradient-to-br from-blue-500 to-teal-500 mb-6 overflow-hidden border flex items-center justify-center">
+                  <Globe className="h-24 w-24 text-white" />
+                </div>
+                <CardTitle className="group-hover:text-primary transition-colors text-2xl">
+                  <Link
+                    href="https://apps.apple.com/us/app/geosnap-4-clues-1-continent/id6761042906"
+                    target="_blank"
+                    className="flex items-center gap-2"
+                  >
+                    GeoSnap: 4 Clues 1 Continent
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
+                </CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  Fun geography trivia game where players guess the continent based on 4 visual clues. Educational and entertaining mobile game built with SwiftUI for all ages.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <Badge variant="secondary" className="text-sm">SwiftUI</Badge>
+                  <Badge variant="secondary" className="text-sm">Trivia Game</Badge>
+                  <Badge variant="secondary" className="text-sm">Geography</Badge>
+                </div>
+                <Button asChild className="w-full" size="lg">
+                  <Link href="https://apps.apple.com/us/app/geosnap-4-clues-1-continent/id6761042906" target="_blank">
+                    View on App Store
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
