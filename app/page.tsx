@@ -4,58 +4,6 @@ import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Code2, Sparkles, Zap, Globe, Mail, MapPin, Phone } from "lucide-react"
 import Link from "next/link"
 
-const demos = [
-  {
-    title: "Firebase Authentication",
-    description: "Secure user signup and login system with real-time authentication",
-    tech: ["Firebase", "React", "TypeScript"],
-    href: "/demos/firebase-auth",
-    gradient: "from-orange-500 to-red-500",
-  },
-  {
-    title: "Lead Generation System",
-    description: "Advanced form with validation, analytics, and CRM integration",
-    tech: ["React Hook Form", "Zod", "Analytics"],
-    href: "/demos/lead-generation",
-    gradient: "from-blue-500 to-cyan-500",
-  },
-  {
-    title: "Random Wheel Spinner",
-    description: "Interactive spinning wheel for contests and decision making",
-    tech: ["Canvas API", "Animations", "React"],
-    href: "/demos/wheel-spinner",
-    gradient: "from-purple-500 to-pink-500",
-  },
-  {
-    title: "Gradient Generator",
-    description: "CSS gradient creator with live preview and code export",
-    tech: ["CSS-in-JS", "Color Theory", "Export"],
-    href: "/demos/gradient-generator",
-    gradient: "from-indigo-500 to-purple-500",
-  },
-  {
-    title: "QR Code Generator",
-    description: "Dynamic QR code creation with customization options",
-    tech: ["QR.js", "Canvas", "Download"],
-    href: "/demos/qr-generator",
-    gradient: "from-teal-500 to-blue-500",
-  },
-  {
-    title: "Weather Dashboard",
-    description: "Real-time weather data with interactive maps and forecasts",
-    tech: ["Weather API", "Maps", "Charts"],
-    href: "/demos/weather-dashboard",
-    gradient: "from-sky-500 to-blue-500",
-  },
-  {
-    title: "Contact Form Validation",
-    description: "Multi-step form with real-time validation and email integration",
-    tech: ["Multi-step", "Validation", "Email API"],
-    href: "/demos/contact-form",
-    gradient: "from-amber-500 to-orange-500",
-  },
-]
-
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
@@ -68,9 +16,6 @@ export default function HomePage() {
           </div>
 
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="#demos" className="text-muted-foreground hover:text-foreground transition-colors">
-              Demos
-            </Link>
             <Link href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
               About
             </Link>
@@ -571,52 +516,6 @@ export default function HomePage() {
                 </Button>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Demo Projects Section */}
-      <section id="demos" className="py-20 px-4">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Interactive Demo Projects</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Explore real-world examples showcasing modern web technologies and innovative solutions
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {demos.map((demo, index) => (
-              <Card
-                key={index}
-                className="group hover:shadow-lg transition-all duration-300 border-0 bg-card/50 backdrop-blur-sm"
-              >
-                <CardHeader>
-                  <div
-                    className={`w-full h-32 rounded-lg bg-gradient-to-br ${demo.gradient} mb-4 flex items-center justify-center`}
-                  >
-                    <Globe className="h-12 w-12 text-white" />
-                  </div>
-                  <CardTitle className="group-hover:text-primary transition-colors">{demo.title}</CardTitle>
-                  <CardDescription className="text-sm leading-relaxed">{demo.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {demo.tech.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="secondary" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                  <Button asChild className="w-full group-hover:bg-primary/90 transition-colors">
-                    <Link href={demo.href}>
-                      View Demo
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>
