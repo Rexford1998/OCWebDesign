@@ -47,30 +47,11 @@ export default function HomePage() {
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Cutting-Edge Web Development
+            Rexford Ray
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-            Professional HTML websites with RESTful APIs, Twilio integration, Firebase backend, webhooks, Stripe Connect
-            payments, AI ChatGPT/Anthropic integration, and SEO AMP pages. Fast delivery, innovative solutions.
+          <p className="text-xl text-muted-foreground leading-relaxed">
+            Full-Stack Web Developer & iOS App Developer
           </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            <div className="flex items-center gap-3 bg-primary/10 border border-primary/20 rounded-lg px-6 py-4">
-              <span className="text-3xl font-bold text-primary">$40</span>
-              <span className="text-muted-foreground">/hour</span>
-            </div>
-            <div className="flex items-center gap-2 bg-green-500/10 border border-green-500/20 rounded-lg px-6 py-4">
-              <Sparkles className="h-5 w-5 text-green-500" />
-              <span className="font-semibold text-green-600 dark:text-green-400">Free Quotes</span>
-            </div>
-          </div>
-
-          <Button asChild size="lg" className="text-lg px-8">
-            <Link href="#contact">
-              Get Your Free Quote
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
         </div>
       </section>
 
