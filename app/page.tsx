@@ -565,10 +565,12 @@ export default function HomePage() {
           <div className="max-w-2xl mx-auto">
             <Card className="group hover:shadow-lg transition-all duration-300">
               <CardHeader>
-                <div className="w-full h-48 rounded-lg bg-gradient-to-br from-red-500 to-red-700 mb-6 flex items-center justify-center">
-                  <svg className="h-20 w-20 text-white" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                  </svg>
+                <div className="w-full h-48 rounded-lg mb-6 flex items-center justify-center overflow-hidden">
+                  <img 
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Apr%202%2C%202026%20at%2002_33_03%20AM-45J2UCAvg4qbo2exLxqFstnO9VmzZl.png"
+                    alt="Swamp Time game artwork"
+                    className="h-full w-full object-cover"
+                  />
                 </div>
                 <CardTitle className="group-hover:text-primary transition-colors text-2xl">
                   <Link href="https://www.roblox.com/games/88192934865627/Swamp-Time" target="_blank" className="flex items-center gap-2">
