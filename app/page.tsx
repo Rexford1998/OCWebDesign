@@ -388,7 +388,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <Card className="group hover:shadow-lg transition-all duration-300">
               <CardHeader>
                 <div className="w-full h-48 rounded-lg bg-gradient-to-br from-orange-500 to-red-600 mb-6 flex items-center justify-center">
@@ -478,6 +478,70 @@ export default function HomePage() {
                 </div>
                 <Button asChild className="w-full" size="lg">
                   <Link href="https://www.reddit.com/r/tinyeye_11_dev/" target="_blank">
+                    Join Subreddit
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <div className="w-full h-48 rounded-lg bg-gradient-to-br from-purple-500 to-pink-600 mb-6 flex items-center justify-center">
+                  <svg className="h-20 w-20 text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
+                  </svg>
+                </div>
+                <CardTitle className="group-hover:text-primary transition-colors text-2xl">
+                  <Link href="https://www.reddit.com/r/collect_karma_dev/" target="_blank" className="flex items-center gap-2">
+                    Collect Karma
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
+                </CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  Join the Collect Karma community and experience a unique 3D modeling corral game. Follow development updates, share ideas, and be part of the creative process.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <Badge variant="secondary" className="text-sm">Game Dev</Badge>
+                  <Badge variant="secondary" className="text-sm">3D Modeling</Badge>
+                  <Badge variant="secondary" className="text-sm">Corral</Badge>
+                </div>
+                <Button asChild className="w-full" size="lg">
+                  <Link href="https://www.reddit.com/r/collect_karma_dev/" target="_blank">
+                    Join Subreddit
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <div className="w-full h-48 rounded-lg bg-gradient-to-br from-red-500 to-rose-600 mb-6 flex items-center justify-center">
+                  <svg className="h-20 w-20 text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
+                  </svg>
+                </div>
+                <CardTitle className="group-hover:text-primary transition-colors text-2xl">
+                  <Link href="https://www.reddit.com/r/kitty_crush_1_dev/" target="_blank" className="flex items-center gap-2">
+                    Kitty Crush
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
+                </CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  Discover Kitty Crush, an adorable candy crush-style game. Join the community for updates, gameplay tips, and development insights into this fun puzzle game.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <Badge variant="secondary" className="text-sm">Game Dev</Badge>
+                  <Badge variant="secondary" className="text-sm">Puzzle</Badge>
+                  <Badge variant="secondary" className="text-sm">Casual</Badge>
+                </div>
+                <Button asChild className="w-full" size="lg">
+                  <Link href="https://www.reddit.com/r/kitty_crush_1_dev/" target="_blank">
                     Join Subreddit
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
