@@ -343,8 +343,12 @@ export default function HomePage() {
 
             <Card className="group hover:shadow-lg transition-all duration-300">
               <CardHeader>
-                <div className="w-full h-64 rounded-lg bg-gradient-to-br from-blue-500 to-teal-500 mb-6 overflow-hidden border flex items-center justify-center">
-                  <Globe className="h-24 w-24 text-white" />
+                <div className="w-full h-64 rounded-lg mb-6 overflow-hidden border flex items-center justify-center">
+                  <img 
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-02%20at%204.01.22%E2%80%AFPM-PkzU8Hk6CyiWAzXMFWDcMXZ9od0LXS.png"
+                    alt="GeoSnap: 4 Clues 1 Continent App Store page"
+                    className="h-full w-full object-cover"
+                  />
                 </div>
                 <CardTitle className="group-hover:text-primary transition-colors text-2xl">
                   <Link
