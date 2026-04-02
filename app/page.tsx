@@ -488,6 +488,50 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Roblox Games Section */}
+      <section className="py-20 px-4 bg-card/30">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Roblox Game Development</h2>
+            <p className="text-xl text-muted-foreground">Immersive gaming experiences on the Roblox platform</p>
+          </div>
+
+          <div className="max-w-2xl mx-auto">
+            <Card className="group hover:shadow-lg transition-all duration-300">
+              <CardHeader>
+                <div className="w-full h-48 rounded-lg bg-gradient-to-br from-red-500 to-red-700 mb-6 flex items-center justify-center">
+                  <svg className="h-20 w-20 text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                </div>
+                <CardTitle className="group-hover:text-primary transition-colors text-2xl">
+                  <Link href="https://www.roblox.com/games/88192934865627/Swamp-Time" target="_blank" className="flex items-center gap-2">
+                    Swamp Time
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
+                </CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  An immersive Roblox game set in a swamp environment. Experience adventure and exploration in this multiplayer world with engaging gameplay and unique mechanics.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <Badge variant="secondary" className="text-sm">Roblox</Badge>
+                  <Badge variant="secondary" className="text-sm">Game Dev</Badge>
+                  <Badge variant="secondary" className="text-sm">Multiplayer</Badge>
+                </div>
+                <Button asChild className="w-full" size="lg">
+                  <Link href="https://www.roblox.com/games/88192934865627/Swamp-Time" target="_blank">
+                    Play on Roblox
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing & Services Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
