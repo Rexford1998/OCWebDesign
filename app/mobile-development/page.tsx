@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { SiteHeader } from "@/components/site-header"
 
 export const metadata: Metadata = {
   title: "Mobile Development | Rexford Ray",
@@ -20,6 +21,9 @@ export const metadata: Metadata = {
 
 export default function MobileDevelopmentPage() {
   return (
+    <main className="min-h-screen bg-background">
+      <SiteHeader />
+      <div className="container mx-auto max-w-5xl py-16 px-4">
     <main className="min-h-screen bg-background py-16 px-4">
       <div className="container mx-auto max-w-5xl">
         <h1 className="text-4xl font-bold mb-4">Mobile Development</h1>
@@ -28,6 +32,9 @@ export default function MobileDevelopmentPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <Card>
             <CardHeader>
+              <div className="w-full h-64 rounded-lg overflow-hidden border mb-4">
+                <img src="/app-store-screenshot.png" alt="Kash Kitchen App Store preview" className="w-full h-full object-cover" />
+              </div>
               <CardTitle>Kash Kitchen</CardTitle>
               <CardDescription>Native iOS ordering app built in SwiftUI.</CardDescription>
             </CardHeader>
@@ -48,6 +55,13 @@ export default function MobileDevelopmentPage() {
 
           <Card>
             <CardHeader>
+              <div className="w-full h-64 rounded-lg overflow-hidden border mb-4">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-02%20at%204.01.22%E2%80%AFPM-PkzU8Hk6CyiWAzXMFWDcMXZ9od0LXS.png"
+                  alt="GeoSnap App Store preview"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <CardTitle>GeoSnap: 4 Clues 1 Continent</CardTitle>
               <CardDescription>Educational geography trivia game built with SwiftUI.</CardDescription>
             </CardHeader>

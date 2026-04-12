@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { SiteHeader } from "@/components/site-header"
 
 export const metadata: Metadata = {
   title: "Roblox Game Development | Rexford Ray",
@@ -20,6 +21,9 @@ export const metadata: Metadata = {
 
 export default function RobloxGamesPage() {
   return (
+    <main className="min-h-screen bg-background">
+      <SiteHeader />
+      <div className="container mx-auto max-w-4xl py-16 px-4">
     <main className="min-h-screen bg-background py-16 px-4">
       <div className="container mx-auto max-w-4xl">
         <h1 className="text-4xl font-bold mb-4">Roblox Game Development</h1>
@@ -27,6 +31,13 @@ export default function RobloxGamesPage() {
 
         <Card>
           <CardHeader>
+            <div className="w-full h-72 rounded-lg overflow-hidden border mb-4">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Apr%202%2C%202026%20at%2002_33_03%20AM-45J2UCAvg4qbo2exLxqFstnO9VmzZl.png"
+                alt="Swamp Time Roblox game artwork"
+                className="w-full h-full object-cover"
+              />
+            </div>
             <CardTitle>Swamp Time</CardTitle>
             <CardDescription>
               Multiplayer swamp adventure with exploration-focused gameplay on Roblox.

@@ -1,12 +1,14 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Code2, Sparkles, Zap, Globe, Mail, MapPin, Phone } from "lucide-react"
+import { ArrowRight, Sparkles, Zap, Globe, Mail, MapPin, Phone } from "lucide-react"
 import Link from "next/link"
+import { SiteHeader } from "@/components/site-header"
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
+      <SiteHeader />
       {/* Header */}
       <header className="border-b border-border bg-card/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">

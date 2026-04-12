@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowRight, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { SiteHeader } from "@/components/site-header"
 
 export const metadata: Metadata = {
   title: "Pricing | Rexford Ray",
@@ -18,6 +19,9 @@ export const metadata: Metadata = {
 
 export default function PricingPage() {
   return (
+    <main className="min-h-screen bg-background">
+      <SiteHeader />
+      <div className="container mx-auto max-w-4xl text-center py-16 px-4">
     <main className="min-h-screen bg-background py-16 px-4">
       <div className="container mx-auto max-w-4xl text-center">
         <h1 className="text-4xl font-bold mb-6">Pricing</h1>
