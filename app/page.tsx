@@ -1,40 +1,14 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Code2, Sparkles, Zap, Globe, Mail, MapPin, Phone } from "lucide-react"
+import { ArrowRight, Sparkles, Zap, Globe, Mail, MapPin, Phone } from "lucide-react"
 import Link from "next/link"
+import { SiteHeader } from "@/components/site-header"
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border bg-card/50 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Code2 className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold font-mono">Rexford Ray</span>
-          </div>
-
-          <nav className="hidden md:flex items-center gap-6">
-            <Link href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
-              About
-            </Link>
-            <Link href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">
-              Contact
-            </Link>
-          </nav>
-
-          <div className="flex items-center gap-4">
-            <div className="w-24 h-24 md:w-32 md:h-32">
-              <img
-                src="/comptia-security-plus.svg"
-                alt="CompTIA Security+ Certified"
-                className="w-full h-full object-contain"
-              />
-            </div>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       {/* Live Projects Section */}
       <section id="live-projects" className="py-20 px-4 bg-muted/30">
@@ -299,6 +273,14 @@ export default function HomePage() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Mobile Development</h2>
             <p className="text-xl text-muted-foreground">SwiftUI and iOS app development expertise</p>
+            <div className="mt-6">
+              <Button asChild variant="outline">
+                <Link href="/mobile-development">
+                  Open Mobile Development Page
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -390,6 +372,14 @@ export default function HomePage() {
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Follow the development journey of our games on Reddit
             </p>
+            <div className="mt-6">
+              <Button asChild variant="outline">
+                <Link href="/reddit-games">
+                  Open Reddit Games Page
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -569,6 +559,14 @@ export default function HomePage() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Roblox Game Development</h2>
             <p className="text-xl text-muted-foreground">Immersive gaming experiences on the Roblox platform</p>
+            <div className="mt-6">
+              <Button asChild variant="outline">
+                <Link href="/roblox-games">
+                  Open Roblox Games Page
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
 
           <div className="max-w-2xl mx-auto">
@@ -634,6 +632,14 @@ export default function HomePage() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
+          <div className="mt-6">
+            <Button asChild variant="outline">
+              <Link href="/pricing">
+                Open Pricing Page
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
 
