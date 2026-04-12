@@ -16,6 +16,18 @@ export default function HomePage() {
           </div>
 
           <nav className="hidden md:flex items-center gap-6">
+            <Link href="/mobile-development" className="text-muted-foreground hover:text-foreground transition-colors">
+              Mobile Development
+            </Link>
+            <Link href="/reddit-games" className="text-muted-foreground hover:text-foreground transition-colors">
+              Reddit Games
+            </Link>
+            <Link href="/roblox-games" className="text-muted-foreground hover:text-foreground transition-colors">
+              Roblox Games
+            </Link>
+            <Link href="/pricing" className="text-muted-foreground hover:text-foreground transition-colors">
+              Pricing
+            </Link>
             <Link href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
               About
             </Link>
@@ -299,6 +311,14 @@ export default function HomePage() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Mobile Development</h2>
             <p className="text-xl text-muted-foreground">SwiftUI and iOS app development expertise</p>
+            <div className="mt-6">
+              <Button asChild variant="outline">
+                <Link href="/mobile-development">
+                  Open Mobile Development Page
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -390,6 +410,14 @@ export default function HomePage() {
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Follow the development journey of our games on Reddit
             </p>
+            <div className="mt-6">
+              <Button asChild variant="outline">
+                <Link href="/reddit-games">
+                  Open Reddit Games Page
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -569,6 +597,14 @@ export default function HomePage() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Roblox Game Development</h2>
             <p className="text-xl text-muted-foreground">Immersive gaming experiences on the Roblox platform</p>
+            <div className="mt-6">
+              <Button asChild variant="outline">
+                <Link href="/roblox-games">
+                  Open Roblox Games Page
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
 
           <div className="max-w-2xl mx-auto">
@@ -634,6 +670,14 @@ export default function HomePage() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
+          <div className="mt-6">
+            <Button asChild variant="outline">
+              <Link href="/pricing">
+                Open Pricing Page
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
 
