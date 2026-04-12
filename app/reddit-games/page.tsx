@@ -48,8 +48,6 @@ export default function RedditGamesPage() {
     <main className="min-h-screen bg-background">
       <SiteHeader />
       <div className="container mx-auto max-w-7xl py-16 px-4">
-    <main className="min-h-screen bg-background py-16 px-4">
-      <div className="container mx-auto max-w-6xl">
         <h1 className="text-4xl font-bold mb-4">Reddit Game Development</h1>
         <p className="text-muted-foreground text-lg mb-10">Dedicated page with subreddit links for each game community.</p>
 
