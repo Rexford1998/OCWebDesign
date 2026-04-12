@@ -9,6 +9,46 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
+      {/* Header */}
+      <header className="border-b border-border bg-card/50 backdrop-blur-sm">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Code2 className="h-8 w-8 text-primary" />
+            <span className="text-xl font-bold font-mono">Rexford Ray</span>
+          </div>
+
+          <nav className="hidden md:flex items-center gap-6">
+            <Link href="/mobile-development" className="text-muted-foreground hover:text-foreground transition-colors">
+              Mobile Development
+            </Link>
+            <Link href="/reddit-games" className="text-muted-foreground hover:text-foreground transition-colors">
+              Reddit Games
+            </Link>
+            <Link href="/roblox-games" className="text-muted-foreground hover:text-foreground transition-colors">
+              Roblox Games
+            </Link>
+            <Link href="/pricing" className="text-muted-foreground hover:text-foreground transition-colors">
+              Pricing
+            </Link>
+            <Link href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
+              About
+            </Link>
+            <Link href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">
+              Contact
+            </Link>
+          </nav>
+
+          <div className="flex items-center gap-4">
+            <div className="w-24 h-24 md:w-32 md:h-32">
+              <img
+                src="/comptia-security-plus.svg"
+                alt="CompTIA Security+ Certified"
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </header>
 
       {/* Live Projects Section */}
       <section id="live-projects" className="py-20 px-4 bg-muted/30">

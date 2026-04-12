@@ -19,22 +19,24 @@ export const metadata: Metadata = {
   ],
 }
 
-const swampTimeGameUrl = "https://www.roblox.com/games/88192934865627/Swamp-Time"
-const swampTimeImageUrl =
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Apr%202%2C%202026%20at%2002_33_03%20AM-45J2UCAvg4qbo2exLxqFstnO9VmzZl.png"
-
 export default function RobloxGamesPage() {
   return (
     <main className="min-h-screen bg-background">
       <SiteHeader />
       <div className="container mx-auto max-w-4xl py-16 px-4">
+    <main className="min-h-screen bg-background py-16 px-4">
+      <div className="container mx-auto max-w-4xl">
         <h1 className="text-4xl font-bold mb-4">Roblox Game Development</h1>
         <p className="text-muted-foreground text-lg mb-10">Dedicated Roblox project page with direct game link.</p>
 
         <Card>
           <CardHeader>
             <div className="w-full h-72 rounded-lg overflow-hidden border mb-4">
-              <img src={swampTimeImageUrl} alt="Swamp Time Roblox game artwork" className="w-full h-full object-cover" />
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Apr%202%2C%202026%20at%2002_33_03%20AM-45J2UCAvg4qbo2exLxqFstnO9VmzZl.png"
+                alt="Swamp Time Roblox game artwork"
+                className="w-full h-full object-cover"
+              />
             </div>
             <CardTitle>Swamp Time</CardTitle>
             <CardDescription>
@@ -48,7 +50,7 @@ export default function RobloxGamesPage() {
               <Badge variant="secondary">Multiplayer</Badge>
             </div>
             <Button asChild className="w-full">
-              <Link href={swampTimeGameUrl} target="_blank">
+              <Link href="https://www.roblox.com/games/88192934865627/Swamp-Time" target="_blank">
                 Open Roblox Game Link
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>

@@ -24,6 +24,8 @@ export default function MobileDevelopmentPage() {
     <main className="min-h-screen bg-background">
       <SiteHeader />
       <div className="container mx-auto max-w-5xl py-16 px-4">
+    <main className="min-h-screen bg-background py-16 px-4">
+      <div className="container mx-auto max-w-5xl">
         <h1 className="text-4xl font-bold mb-4">Mobile Development</h1>
         <p className="text-muted-foreground text-lg mb-10">SwiftUI and iOS app development expertise with direct App Store links.</p>
 
