@@ -20,7 +20,19 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Rexford Ray - Web Development Portfolio",
   description:
-    "Professional web development services in Orange County. Cutting-edge HTML websites with AI, Firebase, and modern technologies.",
+    "Professional web development services in Orange County by Rexford Ray. Cutting-edge websites, mobile apps, Reddit game dev, Roblox games, and transparent pricing.",
+  keywords: [
+    "Rexford Ray",
+    "Rex Orange County web developer",
+    "Orange County web development",
+    "mobile app development",
+    "SwiftUI developer",
+    "Reddit game development",
+    "Roblox game development",
+    "web development pricing",
+    "SEO web developer",
+    "California software developer",
+  ],
   generator: "v0.app",
 }
 
