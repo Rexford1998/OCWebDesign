@@ -22,6 +22,8 @@ export default function PricingPage() {
     <main className="min-h-screen bg-background">
       <SiteHeader />
       <div className="container mx-auto max-w-4xl text-center py-16 px-4">
+    <main className="min-h-screen bg-background py-16 px-4">
+      <div className="container mx-auto max-w-4xl text-center">
         <h1 className="text-4xl font-bold mb-6">Pricing</h1>
         <p className="text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
           Transparent pricing for modern websites, APIs, AI integrations, and full-stack development.
