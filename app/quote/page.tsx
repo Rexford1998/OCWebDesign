@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
+import { SiteHeader } from "@/components/site-header";
 
 interface Message {
   id: string;
@@ -122,8 +123,9 @@ export default function QuotePage() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 py-8 px-4">
-      <div className="max-w-2xl mx-auto">
+    <main className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
+      <SiteHeader />
+      <div className="py-8 px-4">
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-slate-900 mb-2">
             Project Quote Generator
