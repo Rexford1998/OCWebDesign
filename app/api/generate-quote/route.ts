@@ -1,6 +1,4 @@
-import { GoogleGenerativeAI } from '@google/generative-ai'
-
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '')
+import { generateText } from 'ai'
 
 export async function POST(request: Request) {
   try {
@@ -12,15 +10,6 @@ export async function POST(request: Request) {
         { status: 400 }
       )
     }
-
-    if (!process.env.GEMINI_API_KEY) {
-      return Response.json(
-        { error: 'Gemini API key is not configured' },
-        { status: 500 }
-      )
-    }
-
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' })
 
     const prompt = `You are an expert web development project estimator. Based on the following project description, estimate how many hours it would take to complete this project.
 
@@ -37,13 +26,17 @@ Examples:
 
 Respond ONLY with valid JSON like: {"hours": 24}`
 
-    const result = await model.generateContent(prompt)
-    const text = result.response.text()
+    const result = await generateText({
+      model: 'openai/gpt-4o-mini',
+      prompt: prompt,
+    })
+
+    const text = result.text
 
     // Extract JSON from the response
     const jsonMatch = text.match(/\{[\s\S]*\}/)
     if (!jsonMatch) {
-      console.error('[v0] Failed to parse Gemini response:', text)
+      console.error('[v0] Failed to parse AI response:', text)
       return Response.json(
         { error: 'Failed to parse AI response' },
         { status: 500 }
