@@ -8,6 +8,10 @@ import { Card } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { SiteHeader } from "@/components/site-header";
 
+const redirectToHome = () => {
+  window.location.assign("/");
+};
+
 interface Message {
   id: string;
   role: "user" | "assistant";
@@ -82,9 +86,11 @@ export default function QuotePage() {
         }
       } else {
         console.error("Error:", data.error);
+        redirectToHome();
       }
     } catch (error) {
       console.error("[v0] Send message error:", error);
+      redirectToHome();
     } finally {
       setIsLoading(false);
     }
@@ -110,16 +116,17 @@ export default function QuotePage() {
       const data = await response.json();
 
       if (response.ok) {
-        alert(`Quote sent successfully to ${clientEmail}!`);
+        alert("Quote submitted successfully!");
         setShowContactForm(false);
         setClientName("");
         setClientEmail("");
       } else {
-        alert("Error sending quote: " + data.error);
+        console.error("[v0] Send quote error:", data.error);
+        redirectToHome();
       }
     } catch (error) {
       console.error("[v0] Send quote error:", error);
-      alert("Failed to send quote");
+      redirectToHome();
     }
   };
 
@@ -200,7 +207,9 @@ export default function QuotePage() {
               Ready to Send Your Quote?
             </h2>
             <p className="text-slate-600 mb-4">
-              {clientEmail ? `We'll send your personalized quote to ${clientEmail}` : "Enter your email to send your personalized quote"}
+              {clientEmail
+                ? `We'll include ${clientEmail} in your quote request details`
+                : "Enter your email so we can include it in your quote request details"}
             </p>
 
             <div className="space-y-4">

@@ -4,6 +4,7 @@ import { sql } from "drizzle-orm";
 import { NextRequest, NextResponse } from "next/server";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const QUOTE_RECIPIENT = "rexforddray@gmail.com";
 
 interface QuoteEmailData {
   conversationId: string;
@@ -45,7 +46,7 @@ export async function POST(request: NextRequest) {
     // Send email with Resend
     const emailResult = await resend.emails.send({
       from: "noreply@kashkitchen.com",
-      to: clientEmail,
+      to: QUOTE_RECIPIENT,
       subject: `Project Quote - ${clientName}`,
       html: `
         <h2>Project Quote</h2>
@@ -71,7 +72,7 @@ ${estimateMessage.content}
 
     return NextResponse.json({
       success: true,
-      message: `Quote sent successfully to ${clientEmail}`,
+      message: `Quote sent successfully to ${QUOTE_RECIPIENT}`,
     });
   } catch (error) {
     console.error("[v0] Send quote error:", error);
