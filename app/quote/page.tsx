@@ -31,7 +31,6 @@ export default function QuotePage() {
   const [isLoading, setIsLoading] = useState(false);
   const [clientName, setClientName] = useState("");
   const [clientEmail, setClientEmail] = useState("");
-  const [showContactForm, setShowContactForm] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -77,10 +76,6 @@ export default function QuotePage() {
           content: data.message,
         };
         setMessages((prev) => [...prev, assistantMessage]);
-
-        if (data.hasFinalEstimate) {
-          setShowContactForm(true);
-        }
       } else {
         console.error("Error:", data.error);
         redirectToHome();
@@ -114,7 +109,6 @@ export default function QuotePage() {
 
       if (response.ok) {
         alert("Quote submitted successfully!");
-        setShowContactForm(false);
         setClientName("");
         setClientEmail("");
       } else {
@@ -197,71 +191,52 @@ export default function QuotePage() {
           </form>
         </Card>
 
-        {!showContactForm && (
-          <div className="mt-6 flex justify-end">
-            <Button onClick={() => setShowContactForm(true)} variant="outline">
-              Open Quote Submission Form
+        {/* Contact Form for Quote */}
+        <Card className="mt-6 p-6 bg-white shadow-lg border-2 border-green-500">
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">
+            Ready to Send Your Quote?
+          </h2>
+          <p className="text-slate-600 mb-4">
+            {clientEmail
+              ? `We'll include ${clientEmail} in your quote request details`
+              : "Enter your email so we can include it in your quote request details"}
+          </p>
+
+          <div className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-2">
+                Your Name
+              </label>
+              <Input
+                type="text"
+                value={clientName}
+                onChange={(e) => setClientName(e.target.value)}
+                placeholder="Enter your name"
+                className="w-full"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-2">
+                Your Email
+              </label>
+              <Input
+                type="email"
+                value={clientEmail}
+                onChange={(e) => setClientEmail(e.target.value)}
+                placeholder="Enter your email"
+                className="w-full"
+              />
+            </div>
+
+            <Button
+              onClick={handleSendQuote}
+              className="w-full bg-green-500 hover:bg-green-600 text-white"
+            >
+              Send Quote
             </Button>
           </div>
-        )}
-
-        {/* Contact Form for Quote */}
-        {showContactForm && (
-          <Card className="mt-6 p-6 bg-white shadow-lg border-2 border-green-500">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">
-              Ready to Send Your Quote?
-            </h2>
-            <p className="text-slate-600 mb-4">
-              {clientEmail
-                ? `We'll include ${clientEmail} in your quote request details`
-                : "Enter your email so we can include it in your quote request details"}
-            </p>
-
-            <div className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Your Name
-                </label>
-                <Input
-                  type="text"
-                  value={clientName}
-                  onChange={(e) => setClientName(e.target.value)}
-                  placeholder="Enter your name"
-                  className="w-full"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Your Email
-                </label>
-                <Input
-                  type="email"
-                  value={clientEmail}
-                  onChange={(e) => setClientEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="w-full"
-                />
-              </div>
-
-              <div className="flex gap-2">
-                <Button
-                  onClick={handleSendQuote}
-                  className="flex-1 bg-green-500 hover:bg-green-600 text-white"
-                >
-                  Send Quote
-                </Button>
-                <Button
-                  onClick={() => setShowContactForm(false)}
-                  variant="outline"
-                  className="flex-1"
-                >
-                  Continue Chatting
-                </Button>
-              </div>
-            </div>
-          </Card>
-        )}
+        </Card>
       </div>
     </main>
   );
