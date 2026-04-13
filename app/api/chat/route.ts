@@ -1,9 +1,7 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { generateText } from "ai";
 import { db } from "@/lib/db";
 import { sql } from "drizzle-orm";
 import { NextRequest, NextResponse } from "next/server";
-
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 const HOURLY_RATE = 40;
 
@@ -33,15 +31,21 @@ export async function POST(request: NextRequest) {
     const history = await getConversationHistory(conversationId);
 
     // Build chat history for context
-    const chatHistory = history.map((msg: any) => ({
-      role: msg.role === "user" ? "user" : "model",
-      parts: [{ text: msg.content }],
+    const messages = history.map((msg: any) => ({
+      role: msg.role === "user" ? "user" : "assistant",
+      content: msg.content,
     }));
 
-    // Create model with system instruction
-    const model = genAI.getGenerativeModel({
-      model: "gemini-2.0-flash",
-      systemInstruction: `You are an expert web design and development consultant. You help clients refine their project requirements and provide accurate cost estimates based on a $${HOURLY_RATE}/hour rate.
+    // Add the current message
+    messages.push({
+      role: "user",
+      content: message,
+    });
+
+    // Generate response using AI SDK with Vercel AI Gateway
+    const result = await generateText({
+      model: "openai/gpt-4o-mini",
+      system: `You are an expert web design and development consultant. You help clients refine their project requirements and provide accurate cost estimates based on a $${HOURLY_RATE}/hour rate.
 
 When evaluating projects:
 1. Ask clarifying questions about features, complexity, integrations, and timeline
@@ -58,16 +62,10 @@ ESTIMATE:
 - Feature 1: X hours
 - Feature 2: Y hours
 Total: Z hours ($Z × $${HOURLY_RATE} = $TOTAL)`,
+      messages: messages,
     });
 
-    // Start chat session
-    const chat = model.startChat({
-      history: chatHistory.length > 0 ? chatHistory : undefined,
-    });
-
-    // Send message and get response
-    const result = await chat.sendMessage(message);
-    const aiResponse = result.response.text();
+    const aiResponse = result.text;
 
     // Save user message
     await db.execute(
