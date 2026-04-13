@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Sparkles, Zap, Globe, Mail, MapPin, Phone } from "lucide-react"
+import { ArrowRight, Sparkles, Zap, Globe, Mail, MapPin, Phone, MessageCircle } from "lucide-react"
 import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
 
@@ -9,6 +9,31 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
+
+      {/* Quote Generator Section */}
+      <section id="quote-generator" className="py-16 px-4 bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-blue-200">
+        <div className="container mx-auto max-w-4xl">
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <MessageCircle className="h-6 w-6 text-blue-600" />
+            <Badge variant="outline" className="bg-blue-100 text-blue-800 border-blue-300">
+              AI-Powered Quoting
+            </Badge>
+          </div>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Get Your Project Quote</h2>
+            <p className="text-lg text-slate-700 max-w-2xl mx-auto mb-8">
+              Describe your project and chat with our AI to refine requirements and get an instant quote at $40/hour
+            </p>
+            <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
+              <Link href="/quote" className="flex items-center gap-2">
+                <MessageCircle className="h-5 w-5" />
+                Start Your Quote
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* Live Projects Section */}
       <section id="live-projects" className="py-20 px-4 bg-muted/30">
