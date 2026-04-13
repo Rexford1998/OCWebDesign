@@ -6,6 +6,7 @@ const navigationLinks = [
   { href: "/mobile-development", label: "Mobile Development" },
   { href: "/reddit-games", label: "Reddit Games" },
   { href: "/roblox-games", label: "Roblox Games" },
+  { href: "/quote", label: "Generate Quote" },
   { href: "/pricing", label: "Pricing" },
   { href: "/#about", label: "About" },
   { href: "/#contact", label: "Contact" },
