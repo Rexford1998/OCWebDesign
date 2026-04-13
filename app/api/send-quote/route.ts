@@ -23,17 +23,13 @@ export async function POST(request: NextRequest) {
     );
     const messages = result.rows;
 
-    // Find the final estimate message
-    const estimateMessage = messages
+    // Find the latest structured estimate if one exists.
+    const estimateMessage = [...messages]
       .reverse()
       .find((msg: any) => msg.content.includes("ESTIMATE:"));
-
-    if (!estimateMessage) {
-      return NextResponse.json(
-        { error: "No estimate found in conversation" },
-        { status: 400 }
-      );
-    }
+    const finalEstimate =
+      estimateMessage?.content ||
+      "No structured ESTIMATE block was generated in this conversation.";
 
     // Build conversation transcript
     const transcript = messages
@@ -44,7 +40,7 @@ export async function POST(request: NextRequest) {
       .join("\n\n");
 
     // Send email with Resend
-    const emailResult = await resend.emails.send({
+    await resend.emails.send({
       from: "noreply@kashkitchen.com",
       to: QUOTE_RECIPIENT,
       subject: `Project Quote - ${clientName}`,
@@ -60,7 +56,7 @@ ${transcript}
         
         <h3>Final Estimate</h3>
         <pre style="background: #e8f5e9; padding: 15px; border-radius: 5px; overflow-x: auto;">
-${estimateMessage.content}
+${finalEstimate}
         </pre>
       `,
     });

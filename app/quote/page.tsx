@@ -5,7 +5,6 @@ import { v4 as uuidv4 } from "uuid";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
-import { Textarea } from "@/components/ui/textarea";
 import { SiteHeader } from "@/components/site-header";
 
 const redirectToHome = () => {
@@ -33,7 +32,6 @@ export default function QuotePage() {
   const [clientName, setClientName] = useState("");
   const [clientEmail, setClientEmail] = useState("");
   const [showContactForm, setShowContactForm] = useState(false);
-  const [hasFinalEstimate, setHasFinalEstimate] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -81,7 +79,6 @@ export default function QuotePage() {
         setMessages((prev) => [...prev, assistantMessage]);
 
         if (data.hasFinalEstimate) {
-          setHasFinalEstimate(true);
           setShowContactForm(true);
         }
       } else {
@@ -200,8 +197,16 @@ export default function QuotePage() {
           </form>
         </Card>
 
+        {!showContactForm && (
+          <div className="mt-6 flex justify-end">
+            <Button onClick={() => setShowContactForm(true)} variant="outline">
+              Open Quote Submission Form
+            </Button>
+          </div>
+        )}
+
         {/* Contact Form for Quote */}
-        {showContactForm && hasFinalEstimate && (
+        {showContactForm && (
           <Card className="mt-6 p-6 bg-white shadow-lg border-2 border-green-500">
             <h2 className="text-2xl font-bold text-slate-900 mb-4">
               Ready to Send Your Quote?
