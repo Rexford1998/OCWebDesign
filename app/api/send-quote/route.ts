@@ -1,6 +1,6 @@
 import { Resend } from "resend";
 import { db } from "@/lib/db";
-import { sql } from "@neondatabase/serverless";
+import { sql } from "drizzle-orm";
 import { NextRequest, NextResponse } from "next/server";
 
 const resend = new Resend(process.env.RESEND_API_KEY);

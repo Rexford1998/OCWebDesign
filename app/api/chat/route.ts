@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { db } from "@/lib/db";
-import { sql } from "@neondatabase/serverless";
+import { sql } from "drizzle-orm";
 import { NextRequest, NextResponse } from "next/server";
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
@@ -17,6 +17,17 @@ async function getConversationHistory(conversationId: string) {
 export async function POST(request: NextRequest) {
   try {
     const { message, conversationId, projectDetails } = await request.json();
+
+    // Ensure conversation exists
+    const conversationCheck = await db.execute(
+      sql`SELECT id FROM conversations WHERE id = ${conversationId}`
+    );
+
+    if (conversationCheck.rows.length === 0) {
+      await db.execute(
+        sql`INSERT INTO conversations (id, status) VALUES (${conversationId}, 'in_progress')`
+      );
+    }
 
     // Get conversation history
     const history = await getConversationHistory(conversationId);
@@ -78,8 +89,9 @@ Total: Z hours ($Z × $${HOURLY_RATE} = $TOTAL)`,
     });
   } catch (error) {
     console.error("[v0] Chat API error:", error);
+    const errorMessage = error instanceof Error ? error.message : "Failed to process message";
     return NextResponse.json(
-      { error: "Failed to process message" },
+      { error: errorMessage },
       { status: 500 }
     );
   }

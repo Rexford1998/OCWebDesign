@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     "California software developer",
   ],
   generator: "v0.app",
+  icons: {
+    icon: "/icon.svg",
+  },
 }
 
 export default function RootLayout({

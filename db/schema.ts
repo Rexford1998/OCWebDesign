@@ -2,7 +2,7 @@ import { pgTable, text, timestamp, uuid, varchar } from 'drizzle-orm/pg-core';
 
 export const conversations = pgTable('conversations', {
   id: uuid('id').primaryKey().defaultRandom(),
-  userEmail: varchar('user_email', { length: 255 }).notNull(),
+  userEmail: varchar('user_email', { length: 255 }),
   projectDescription: text('project_description'),
   finalHours: text('final_hours'),
   finalCost: text('final_cost'),
