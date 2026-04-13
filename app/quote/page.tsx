@@ -62,6 +62,7 @@ export default function QuotePage() {
           message: inputValue,
           conversationId,
           projectDetails: messages,
+          userEmail: clientEmail,
         }),
       });
 

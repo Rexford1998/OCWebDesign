@@ -16,7 +16,7 @@ async function getConversationHistory(conversationId: string) {
 
 export async function POST(request: NextRequest) {
   try {
-    const { message, conversationId, projectDetails } = await request.json();
+    const { message, conversationId, projectDetails, userEmail = "" } = await request.json();
 
     // Ensure conversation exists
     const conversationCheck = await db.execute(
@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
 
     if (conversationCheck.rows.length === 0) {
       await db.execute(
-        sql`INSERT INTO conversations (id, status) VALUES (${conversationId}, 'in_progress')`
+        sql`INSERT INTO conversations (id, user_email, status) VALUES (${conversationId}, ${userEmail}, 'in_progress')`
       );
     }
 
