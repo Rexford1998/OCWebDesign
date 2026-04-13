@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
 
     // Create model with system instruction
     const model = genAI.getGenerativeModel({
-      model: "gemini-1.5-flash",
+      model: "gemini-2.0-flash",
       systemInstruction: `You are an expert web design and development consultant. You help clients refine their project requirements and provide accurate cost estimates based on a $${HOURLY_RATE}/hour rate.
 
 When evaluating projects:
