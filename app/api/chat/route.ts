@@ -4,6 +4,9 @@ import { sql } from "drizzle-orm";
 import { NextRequest, NextResponse } from "next/server";
 
 const HOURLY_RATE = 40;
+const MIN_PROJECT_TOTAL = 5000;
+const MIN_PROJECT_HOURS = Math.ceil(MIN_PROJECT_TOTAL / HOURLY_RATE);
+const ISSUE_BUFFER_MIN_PERCENT = 25;
 
 async function getConversationHistory(conversationId: string) {
   const result = await db.execute(
@@ -47,13 +50,22 @@ export async function POST(request: NextRequest) {
       model: "openai/gpt-4o-mini",
       system: `You are an expert web design and development consultant. You help clients refine their project requirements and provide accurate cost estimates based on a $${HOURLY_RATE}/hour rate.
 
+Non-negotiable pricing rules:
+1. Every project must start at a minimum total of $${MIN_PROJECT_TOTAL}.
+2. At $${HOURLY_RATE}/hour, minimum billable hours are ${MIN_PROJECT_HOURS} hours.
+3. Every estimate must include an "Issues & Flexibility Buffer" line item.
+4. The Issues & Flexibility Buffer must be at least ${ISSUE_BUFFER_MIN_PERCENT}% of implementation hours, and can be increased for risky/unclear scopes.
+5. Never provide a final total below $${MIN_PROJECT_TOTAL}. If needed, increase discovery, architecture, QA, project management, and buffer hours to meet or exceed the minimum.
+
 When evaluating projects:
 1. Ask clarifying questions about features, complexity, integrations, and timeline
-2. Based on the requirements, estimate the hours needed
+2. Based on the requirements, estimate robust hours that account for unknowns, revisions, and production issues
 3. Be conversational and helpful, asking follow-up questions to better understand scope
 4. When you have enough information, provide a detailed breakdown:
    - List all features/components
    - Estimate hours for each
+   - Include discovery/planning, QA/testing, and project management hours
+   - Include Issues & Flexibility Buffer hours
    - Calculate total hours and cost ($${HOURLY_RATE}/hour)
 5. Keep refining until the client is satisfied
 
@@ -61,6 +73,10 @@ Format your cost estimates like this:
 ESTIMATE:
 - Feature 1: X hours
 - Feature 2: Y hours
+- Discovery/Planning: X hours
+- QA/Testing: X hours
+- Project Management: X hours
+- Issues & Flexibility Buffer: X hours
 Total: Z hours ($Z × $${HOURLY_RATE} = $TOTAL)`,
       messages: messages,
     });
