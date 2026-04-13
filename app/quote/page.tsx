@@ -110,7 +110,7 @@ export default function QuotePage() {
       const data = await response.json();
 
       if (response.ok) {
-        alert("Quote sent successfully to rexforddray@gmail.com!");
+        alert(`Quote sent successfully to ${clientEmail}!`);
         setShowContactForm(false);
         setClientName("");
         setClientEmail("");
@@ -200,7 +200,7 @@ export default function QuotePage() {
               Ready to Send Your Quote?
             </h2>
             <p className="text-slate-600 mb-4">
-              We&apos;ll send your personalized quote to rexforddray@gmail.com
+              {clientEmail ? `We'll send your personalized quote to ${clientEmail}` : "Enter your email to send your personalized quote"}
             </p>
 
             <div className="space-y-4">
