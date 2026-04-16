@@ -22,9 +22,7 @@ export default function HomePage() {
               <Badge variant="outline" className="bg-blue-100 text-blue-800 border-blue-300 shrink-0">
                 AI-Powered Quoting
               </Badge>
-              <p className="text-slate-700 truncate">
-                Get an instant project quote with built-in issue flexibility.
-              </p>
+              <p className="text-slate-700 truncate">Get an instant project quote.</p>
             </div>
             <Button asChild className="bg-blue-600 hover:bg-blue-700 shrink-0">
               <Link href="/quote" className="flex items-center gap-2">
