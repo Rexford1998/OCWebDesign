@@ -7,15 +7,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { SiteHeader } from "@/components/site-header"
 
 export const metadata: Metadata = {
-  title: "Roblox Game Development | Rexford Ray",
+  title: "Roblox Game Development | OCWebDesign.tech",
   description:
-    "Roblox game development page with direct game links and gameplay highlights from Rexford Ray projects.",
+    "Roblox game development page with direct game links and gameplay highlights from OCWebDesign.tech projects.",
   keywords: [
     "Roblox game development",
     "Roblox developer Orange County",
     "Swamp Time Roblox",
     "multiplayer Roblox game",
-    "Rexford Ray Roblox games",
+    "OCWebDesign.tech Roblox games",
   ],
 }
 
