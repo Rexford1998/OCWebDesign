@@ -7,13 +7,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { SiteHeader } from "@/components/site-header"
 
 export const metadata: Metadata = {
-  title: "Reddit Game Development | Rexford Ray",
+  title: "Reddit Game Development | OCWebDesign.tech",
   description:
-    "Follow Reddit game development communities and progress updates from Rexford Ray projects.",
+    "Follow Reddit game development communities and progress updates from OCWebDesign.tech projects.",
   keywords: [
     "Reddit game development",
     "indie game dev subreddit",
-    "Rexford Ray Reddit games",
+    "OCWebDesign.tech Reddit games",
     "Orange County indie game developer",
     "game development community",
   ],

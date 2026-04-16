@@ -130,8 +130,7 @@ export default function QuotePage() {
             Project Quote Generator
           </h1>
           <p className="text-lg text-slate-600">
-            Tell us about your project and get an AI-powered quote based on our
-            $40/hour rate
+            Tell us about your project and get an AI-powered custom quote for your needs
           </p>
         </div>
 

@@ -18,7 +18,7 @@ export function SiteHeader() {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between gap-4">
         <div className="flex items-center gap-2">
           <Code2 className="h-8 w-8 text-primary" />
-          <span className="text-xl font-bold font-mono">Rexford Ray</span>
+          <span className="text-xl font-bold font-mono">OCWebDesign.tech</span>
         </div>
 
         <nav className="hidden lg:flex items-center gap-6">

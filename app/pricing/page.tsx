@@ -5,13 +5,13 @@ import { Button } from "@/components/ui/button"
 import { SiteHeader } from "@/components/site-header"
 
 export const metadata: Metadata = {
-  title: "Pricing | Rexford Ray",
+  title: "Pricing | OCWebDesign.tech",
   description:
-    "Web development pricing page for Rexford Ray with hourly rate, free quotes, and direct contact links.",
+    "Web development pricing page for OCWebDesign.tech with free quotes and direct contact links.",
   keywords: [
     "web development pricing Orange County",
-    "Rexford Ray pricing",
-    "website development hourly rate",
+    "OCWebDesign.tech pricing",
+    "website development services",
     "free web development quote",
     "SEO web developer pricing",
   ],
@@ -28,10 +28,6 @@ export default function PricingPage() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-10">
-          <div className="flex items-center gap-3 bg-primary/10 border border-primary/20 rounded-xl px-8 py-5">
-            <span className="text-4xl font-bold text-primary">$40</span>
-            <span className="text-lg text-muted-foreground">/hour</span>
-          </div>
           <div className="flex items-center gap-3 bg-green-500/10 border border-green-500/20 rounded-xl px-8 py-5">
             <Sparkles className="h-6 w-6 text-green-500" />
             <span className="text-lg font-semibold text-green-600 dark:text-green-400">Free Quotes</span>

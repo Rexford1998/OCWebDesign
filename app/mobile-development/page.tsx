@@ -7,14 +7,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { SiteHeader } from "@/components/site-header"
 
 export const metadata: Metadata = {
-  title: "Mobile Development | Rexford Ray",
+  title: "Mobile Development | OCWebDesign.tech",
   description:
-    "SwiftUI and iOS mobile app development portfolio by Rexford Ray in Orange County, including App Store projects and direct site links.",
+    "SwiftUI and iOS mobile app development portfolio by OCWebDesign.tech in Orange County, including App Store projects and direct site links.",
   keywords: [
     "mobile development Orange County",
     "iOS app developer Orange County",
     "SwiftUI developer California",
-    "Rexford Ray mobile apps",
+    "OCWebDesign.tech mobile apps",
     "App Store app development",
   ],
 }
